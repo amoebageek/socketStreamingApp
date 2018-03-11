@@ -16,10 +16,13 @@
 
 **Globals**
 
-	`globalObject.sparkLineObj` = [Keep record of data for sparkline];
-	`globalObject.bidCollection` = [Hold all values published from websocket];
-	`globalObject.bidsInTable` = [All obj pushed in table];
-	`globalObject.uniqueNameCollection` = [Hold Unique name pushed in table];
+`globalObject.sparkLineObj` =  [Keep record of data for sparkline];
+
+`globalObject.bidCollection` =  [Hold all values published from websocket];
+
+`globalObject.bidsInTable` =  [All obj pushed in table];
+
+`globalObject.uniqueNameCollection` =  [Hold Unique name pushed in table];
 
 **API**
 
