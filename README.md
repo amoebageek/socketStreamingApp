@@ -13,13 +13,16 @@
 
 1)  This application is POC to read data from live streaming of objects, and push in table in sorted order (lastAskedBid)
 2) Read the data, and prepare sparkline graph for the mid value of the askedBid, to provide clear visibilities of the graph delete all records of past 30 seconds.
+
 **Globals**
+
 	`globalObject.sparkLineObj` = [Keep record of data for sparkline];
 	`globalObject.bidCollection` = [Hold all values published from websocket];
 	`globalObject.bidsInTable` = [All obj pushed in table];
 	`globalObject.uniqueNameCollection` = [Hold Unique name pushed in table];
 
 **API**
+
 |  SNo.|  Methods| Defination  |
 |--|--|--|
 | 1 | [`connectCallback`](https://github.com/amoebageek/socketStreamingApp/blob/master/index.js#L198)  |call back function to hook as successful connection established to web socket|
