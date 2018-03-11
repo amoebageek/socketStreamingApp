@@ -59,7 +59,8 @@ var table = document.getElementById('dbTable');
             /*
                 if name not present in the table push it
             */
-              insertRowToTable('last',objToRender);
+              var rowInTable = table.rows.length;
+              insertRowToTable((rowInTable-1), objToRender);
         } else {
             /*
                 if name present in table update it
@@ -106,10 +107,23 @@ var table = document.getElementById('dbTable');
           /* Because header is also a row */
           globalObject.uniqueNameCollection.push(objToRender.name);
           var currentRowCount =table.getElementsByTagName("tr");
-          if(index === 'last') {
+          if(index === 0 ) {
               var newRow = table.insertRow(currentRowCount.length);      
           } else {
-            var newRow = table.insertRow(index);      
+            /*
+                    check if value of LastChangeBid at obj at index -1 < currentObj.LastChangeBid
+            */
+            var objectsInTable = convertTableToObject();
+            if(parseFloat(objectsInTable[index-1].LastChangeAsk) < objToRender.lastChangeAsk ) {
+              /*
+                  before inserting new row check if lastChange bid in noew object is less than that of its previous index
+                  if less
+                    swap those rows
+              */
+              var newRow = table.insertRow(index);
+            } else {
+                  var newRow = table.insertRow(index+1);
+            }      
           }
           
           for (var i=0; i< 6; i++){
